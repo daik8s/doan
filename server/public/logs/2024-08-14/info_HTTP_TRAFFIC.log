@@ -1,0 +1,298 @@
+
+2024-08-14T15:01:42.609Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:01:42.628Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:01:42.635Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:01:42.669Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:01:42.679Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:01:42.938Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (200)
+2024-08-14T15:01:42.951Z ::1 GET /?fields=name%20slug%20image (200)
+2024-08-14T15:01:43.692Z ::1 GET /?fields=name%20slug%20image (200)
+2024-08-14T15:01:44.791Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:01:45.075Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:01:45.373Z ::1 GET /best-seller (200)
+2024-08-14T15:01:53.578Z ::1 GET /?search=&page=1&limit=20&b=&c= (200)
+2024-08-14T15:02:50.560Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:02:50.569Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:02:50.578Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:02:50.584Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:02:50.590Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:02:50.829Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:02:50.839Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:02:51.668Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:02:53.714Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:02:54.651Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:02:54.908Z ::1 GET /best-seller (304)
+2024-08-14T15:02:55.921Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:02:59.933Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:02:59.940Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:02:59.945Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:02:59.952Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:02:59.958Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:03:00.210Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:03:00.214Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:03:00.428Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:03:01.018Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:03:02.351Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:03:02.442Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:03:02.604Z ::1 GET /best-seller (304)
+2024-08-14T15:03:17.008Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:03:17.013Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:03:17.018Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:03:17.022Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:03:17.026Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:03:17.274Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:03:17.293Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:03:17.310Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:03:18.011Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:03:18.116Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:03:18.246Z ::1 GET /best-seller (304)
+2024-08-14T15:03:20.261Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:03:26.158Z ::1 GET /api/v1/products/iphone-12?fields=_id%20name%20slug%20desc%20video%20overSpecs%20policies%20detailSpecs%20origin%20category%20brand%20tags%20views%20rate%20variants%20quantity%20warrantyPeriod%20isHide%20createdAt%20updatedAt
+2024-08-14T15:03:26.614Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:03:26.795Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:03:27.056Z ::1 GET /iphone-12?fields=_id%20name%20slug%20desc%20video%20overSpecs%20policies%20detailSpecs%20origin%20category%20brand%20tags%20views%20rate%20variants%20quantity%20warrantyPeriod%20isHide%20createdAt%20updatedAt (200)
+2024-08-14T15:03:31.002Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:03:31.046Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:03:31.332Z ::1 GET /best-seller (304)
+2024-08-14T15:03:34.776Z ::1 GET /?search=&page=1&limit=20&b=&c= (200)
+2024-08-14T15:03:36.616Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:03:36.628Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:03:40.051Z ::1 GET /api/v1/products?search=&page=2&limit=20&b=&c=
+2024-08-14T15:03:42.644Z ::1 GET /?search=&page=2&limit=20&b=&c= (200)
+2024-08-14T15:03:45.481Z ::1 GET /api/v1/categories?fields=_id%20name%20slug
+2024-08-14T15:03:45.485Z ::1 GET /api/v1/products?search=&c=&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1
+2024-08-14T15:03:46.505Z ::1 GET /?fields=_id%20name%20slug (200)
+2024-08-14T15:03:46.514Z ::1 GET /api/v1/brands?fields=_id%20name%20slug
+2024-08-14T15:03:46.609Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:03:46.613Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:03:46.776Z ::1 GET /?fields=_id%20name%20slug (200)
+2024-08-14T15:03:46.982Z ::1 GET /api/v1/products?search=&c=c00000000000000000000005&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1
+2024-08-14T15:03:49.609Z ::1 GET /?search=&c=&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1 (200)
+2024-08-14T15:03:49.860Z ::1 GET /?search=&c=c00000000000000000000005&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1 (200)
+2024-08-14T15:03:54.875Z ::1 GET /api/v1/products?search=&c=c00000000000000000000003&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1
+2024-08-14T15:03:56.618Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:03:56.630Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:03:58.280Z ::1 GET /?search=&c=c00000000000000000000003&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1 (200)
+2024-08-14T15:04:06.603Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:04:06.607Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:04:28.108Z ::1 POST /api/v1/auth/google
+2024-08-14T15:04:28.250Z ::1 POST /api/v1/auth/google (500)
+2024-08-14T15:05:48.432Z ::1 POST /api/v1/auth/login
+2024-08-14T15:05:48.440Z ::1 POST /login (200)
+2024-08-14T15:06:34.200Z ::1 POST /api/v1/auth/login
+2024-08-14T15:06:34.203Z ::1 POST /login (200)
+2024-08-14T15:10:00.235Z ::1 POST /api/v1/auth/login
+2024-08-14T15:10:00.239Z ::1 POST /login (200)
+2024-08-14T15:10:00.826Z ::1 POST /api/v1/cart
+2024-08-14T15:10:00.831Z ::1 POST /api/v1/cart (404)
+2024-08-14T15:10:00.838Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:10:00.843Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:10:00.847Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:10:00.853Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:10:00.856Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:10:01.108Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:10:01.131Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:10:01.198Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:10:01.890Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:10:02.213Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:10:02.490Z ::1 GET /best-seller (304)
+2024-08-14T15:10:04.658Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:10:10.977Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:10:10.981Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:10:10.984Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:10:10.988Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:10:10.992Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:10:11.226Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:10:11.244Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:10:11.277Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:10:12.025Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:10:12.464Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:10:12.725Z ::1 GET /best-seller (304)
+2024-08-14T15:10:24.371Z ::1 POST /api/v1/auth/login
+2024-08-14T15:10:24.636Z ::1 POST /api/v1/auth/login (404)
+2024-08-14T15:11:56.711Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:11:56.721Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:11:56.728Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:11:56.738Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:11:56.752Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:11:56.989Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:11:56.997Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:11:57.290Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:11:57.754Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:11:58.142Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:11:58.409Z ::1 GET /best-seller (304)
+2024-08-14T15:12:02.337Z ::1 GET /?search=&page=1&limit=20&b=&c= (200)
+2024-08-14T15:12:06.809Z ::1 GET /api/v1/categories?fields=_id%20name%20slug
+2024-08-14T15:12:06.813Z ::1 GET /api/v1/products?search=&c=&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1
+2024-08-14T15:12:07.908Z ::1 GET /?fields=_id%20name%20slug (304)
+2024-08-14T15:12:07.917Z ::1 GET /api/v1/brands?fields=_id%20name%20slug
+2024-08-14T15:12:08.175Z ::1 GET /?fields=_id%20name%20slug (304)
+2024-08-14T15:12:09.049Z ::1 GET /api/v1/products?search=&c=&b=b00000000000000000000048&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1
+2024-08-14T15:12:10.417Z ::1 GET /?search=&c=&b=&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1 (304)
+2024-08-14T15:12:11.880Z ::1 GET /?search=&c=&b=b00000000000000000000048&page=1&limit=10&getBrandFilter=1&getCategoryFilter=1&isShowHidden=0&fullTextSearch=1 (200)
+2024-08-14T15:12:14.194Z ::1 GET /api/v1/products/tai-nghe-bluetooth-airpods-2-wireless-charge-apple-mrxj2?fields=_id%20name%20slug%20desc%20video%20overSpecs%20policies%20detailSpecs%20origin%20category%20brand%20tags%20views%20rate%20variants%20quantity%20warrantyPeriod%20isHide%20createdAt%20updatedAt
+2024-08-14T15:12:14.977Z ::1 GET /tai-nghe-bluetooth-airpods-2-wireless-charge-apple-mrxj2?fields=_id%20name%20slug%20desc%20video%20overSpecs%20policies%20detailSpecs%20origin%20category%20brand%20tags%20views%20rate%20variants%20quantity%20warrantyPeriod%20isHide%20createdAt%20updatedAt (200)
+2024-08-14T15:12:16.554Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:12:16.559Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:12:26.024Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:12:26.030Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:12:33.670Z ::1 GET /api/v1/account/addresses
+2024-08-14T15:12:33.674Z ::1 GET /api/v1/account/addresses (400)
+2024-08-14T15:12:36.019Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:12:36.026Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:12:46.019Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:12:46.023Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:12:56.032Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:12:56.045Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:06.020Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:06.025Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:16.020Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:16.023Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:26.028Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:26.039Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:36.022Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:36.027Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:46.032Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:46.037Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:13:56.257Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:13:56.264Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:06.254Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:06.257Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:16.258Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:16.262Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:26.250Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:26.256Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:36.260Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:36.264Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:46.268Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:46.275Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:14:57.244Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:14:57.252Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:15:06.266Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:15:06.270Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:15:16.286Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:15:16.292Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:15:26.255Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:15:26.259Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:15:36.263Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:15:36.268Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:15:46.018Z ::1 POST /api/v1/user-behavior
+2024-08-14T15:15:46.022Z ::1 POST /api/v1/user-behavior (404)
+2024-08-14T15:17:00.000Z ::1 POST /api/v1/auth/login
+2024-08-14T15:17:00.005Z ::1 POST /login (200)
+2024-08-14T15:17:00.691Z ::1 POST /api/v1/cart
+2024-08-14T15:17:00.697Z ::1 POST /api/v1/cart (404)
+2024-08-14T15:17:00.703Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:17:00.709Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:17:00.715Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:17:00.717Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:17:00.726Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:17:00.961Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:17:00.979Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:17:01.462Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:17:01.737Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:17:02.873Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:17:03.168Z ::1 GET /best-seller (304)
+2024-08-14T15:17:04.075Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:17:52.038Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:17:52.044Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:17:52.046Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:17:52.052Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:17:52.057Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:17:52.293Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:17:52.310Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:17:53.057Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:17:54.582Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:17:54.734Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:17:54.993Z ::1 GET /best-seller (304)
+2024-08-14T15:18:01.653Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:19:18.446Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:19:18.456Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:19:18.458Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:19:18.466Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:19:18.474Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:19:18.721Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:19:18.736Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:19:19.259Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:19:19.523Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:19:21.170Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:19:21.446Z ::1 GET /best-seller (304)
+2024-08-14T15:19:52.792Z ::1 POST /api/v1/auth/login
+2024-08-14T15:19:52.796Z ::1 POST /login (200)
+2024-08-14T15:21:35.114Z ::1 POST /api/v1/auth/register
+2024-08-14T15:21:35.146Z ::1 POST /api/v1/auth/register (500)
+2024-08-14T15:23:26.646Z ::1 POST /api/v1/auth/register
+2024-08-14T15:23:26.706Z ::1 POST /api/v1/auth/register (500)
+2024-08-14T15:23:32.825Z ::1 POST /api/v1/auth/register
+2024-08-14T15:23:32.839Z ::1 POST /api/v1/auth/register (500)
+2024-08-14T15:26:06.466Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:26:06.476Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:26:06.482Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:26:06.501Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:26:06.505Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:26:06.706Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:26:06.761Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:26:06.776Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:26:07.568Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:26:08.053Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:26:08.352Z ::1 GET /best-seller (304)
+2024-08-14T15:26:09.231Z ::1 GET /?search=&page=1&limit=20&b=&c= (200)
+2024-08-14T15:26:29.387Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:26:29.395Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:26:29.400Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:26:29.408Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:26:29.415Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:26:29.675Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:26:29.685Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:26:30.535Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:26:41.846Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:26:41.850Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:26:41.853Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:26:41.861Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:26:41.867Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:26:42.118Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:26:42.122Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:26:42.966Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:27:09.093Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:27:09.248Z ::1 GET /api/v1/products/best-seller
+2024-08-14T15:27:09.653Z ::1 GET /best-seller (304)
+2024-08-14T15:27:11.854Z ::1 GET /?search=&page=1&limit=20&b=&c= (304)
+2024-08-14T15:29:08.097Z ::1 GET /api/v1/products?search=&b=&c=
+2024-08-14T15:29:08.109Z ::1 GET /api/v1/products/all
+2024-08-14T15:29:08.120Z ::1 GET /api/v1/brands
+2024-08-14T15:29:08.128Z ::1 GET /api/v1/categories
+2024-08-14T15:29:08.136Z ::1 GET /api/v1/users/customer
+2024-08-14T15:29:08.145Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000
+2024-08-14T15:29:08.159Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000 (400)
+2024-08-14T15:29:08.191Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000
+2024-08-14T15:29:08.197Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000 (400)
+2024-08-14T15:29:08.469Z ::1 GET /customer (200)
+2024-08-14T15:29:08.649Z ::1 GET / (200)
+2024-08-14T15:29:09.326Z ::1 GET / (200)
+2024-08-14T15:29:10.571Z ::1 GET /?search=&b=&c= (200)
+2024-08-14T15:29:10.576Z ::1 GET /api/v1/products?search=&b=&c=
+2024-08-14T15:29:11.961Z ::1 GET /?search=&b=&c= (304)
+2024-08-14T15:29:12.979Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000
+2024-08-14T15:29:12.983Z ::1 GET /api/v1/orders/manager/?search=&status=&paymentStatus=&page=1&limit=100000 (400)
+2024-08-14T15:29:15.241Z ::1 GET /api/v1/categories
+2024-08-14T15:29:16.715Z ::1 GET / (304)
+2024-08-14T15:29:27.557Z ::1 GET /api/v1/discounts?isShowAllDate=1&isShowHidden=1
+2024-08-14T15:29:27.976Z ::1 GET /?isShowAllDate=1&isShowHidden=1 (200)
+2024-08-14T15:29:28.115Z ::1 GET /api/v1/products/all
+2024-08-14T15:29:28.128Z ::1 GET /api/v1/products/all
+2024-08-14T15:29:29.133Z ::1 GET /api/v1/brands
+2024-08-14T15:29:29.701Z ::1 GET / (304)
+2024-08-14T15:29:30.648Z ::1 GET /api/v1/products/all
+2024-08-14T15:29:31.162Z ::1 GET /api/v1/discounts?isShowAllDate=1&isShowHidden=1
+2024-08-14T15:29:31.554Z ::1 GET /?isShowAllDate=1&isShowHidden=1 (304)
+2024-08-14T15:29:32.034Z ::1 GET /api/v1/products/all
+2024-08-14T15:30:00.666Z ::1 GET /api/v1/products/search/suggest?keyword=
+2024-08-14T15:30:00.690Z ::1 GET /api/v1/products/search/suggest?keyword= (404)
+2024-08-14T15:30:00.694Z ::1 GET /api/v1/categories?fields=name%20slug%20image
+2024-08-14T15:30:00.707Z ::1 GET /api/v1/brands?fields=name%20slug%20image
+2024-08-14T15:30:00.713Z ::1 GET /api/v1/discounts?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image
+2024-08-14T15:30:00.952Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:30:00.996Z ::1 GET /?fields=name,desc,code,beginDate,endDate,quantity,unlimitedQty,discount,discountType,minimumTotal,maximumApplied,image (304)
+2024-08-14T15:30:01.168Z ::1 GET /api/v1/products?search=&page=1&limit=20&b=&c=
+2024-08-14T15:30:01.981Z ::1 GET /?fields=name%20slug%20image (304)
+2024-08-14T15:30:03.172Z ::1 GET /api/v1/products/best-seller
