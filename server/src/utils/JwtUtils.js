@@ -12,7 +12,7 @@ class JwtUtils {
    * @returns jwt token
    */
   static generateToken(payload, expiresIn = defaultExpiresIn) {
-    const token = jwt.sign(payload, secretKey, { expiresIn });
+    const token = jwt.sign(payload, secretKey, { expiresIn: '3day' });
     return token;
   }
 

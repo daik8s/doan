@@ -196,6 +196,7 @@ export const addItemToCart = (item, extraInfo) => async (dispatch, getState) => 
     dispatch(actions.startLoading());
     if (getState().cart.isAuthenticated) {
       const { data } = await api.addItemToCart(item);
+
       dispatch(actions.addItem(data.data));
     } else {
       dispatch(actions.addItem({ ...item, ...extraInfo }));

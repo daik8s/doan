@@ -1,5 +1,5 @@
-import jwtDecode from 'jwt-decode';
-import { verify, sign } from 'jsonwebtoken';
+import jwtDecode from "jwt-decode";
+import { verify, sign } from "jsonwebtoken";
 
 // ----------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ const isValidToken = (accessToken) => {
 
   const decoded = jwtDecode(accessToken);
   const currentTime = Date.now() / 1000;
-
+  console.log('decoded.exp > currentTime', decoded.exp > currentTime)
   return decoded.exp > currentTime;
 };
 
@@ -29,14 +29,14 @@ const isValidToken = (accessToken) => {
 
 const setSession = (accessToken, refreshToken) => {
   if (accessToken) {
-    localStorage.setItem('accessToken', accessToken);
-    localStorage.setItem('refreshToken', refreshToken);
+    localStorage.setItem("accessToken", accessToken);
+    localStorage.setItem("refreshToken", refreshToken);
     // This function below will handle when token is expired
     // const { exp } = jwtDecode(accessToken);
     // handleTokenExpired(exp);
   } else {
-    localStorage.removeItem('accessToken');
-    localStorage.removeItem('refreshToken');
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
   }
 };
 

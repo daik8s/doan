@@ -39,7 +39,7 @@ const configs = {
 
   mongoUri: "mongodb+srv://dai15081999:15081999@dai99.eq38oc3.mongodb.net/?retryWrites=true&w=majority&appName=dai99",
 
-  jwtSecret: env.JWT_SECRET,
+  jwtSecret: '31313',
   jwtExpiresIn: env.JWT_EXPIRES_IN,
 
   firebaseServiceAccount: {
