@@ -19,13 +19,41 @@ const Chat = () => {
 
   // Thông tin về website
   const websiteInfo = `
-    Tên website: Bán hàng điện tử
+    Tên website: HK Mobile - Cửa hàng điện thoại và phụ kiện chính hãng
     Mô tả: Đây là một tính năng giúp bạn có thể tiếp cận ứng dụng tốt hơn
+    
+    Thông tin cửa hàng:
+    - Tên: HK Mobile
+    - Loại hình: Cửa hàng điện thoại và phụ kiện chính hãng
+    - Mạng xã hội: 
+      + Facebook: https://www.facebook.com/mobileshop
+      + Google: https://www.google.com/
+      + LinkedIn: https://www.linkedin.com/
+      + Twitter: https://www.twitter.com/
+
+    Chính sách bán hàng:
+    - 100% hàng chính hãng
+    - Bảo hành chính hãng
+    - Đổi trả trong 15 ngày nếu có lỗi
+    - Giá đã bao gồm thuế
+
     Chức năng chính: 
     - Trò chuyện với người dùng và trả lời các câu hỏi
     - Tra cứu đơn hàng theo mã đơn hoặc số điện thoại
     - Tìm kiếm sản phẩm theo tên, danh mục
-    Công nghệ sử dụng: React, Gemini API
+    - Xem chi tiết sản phẩm và đánh giá
+    - Quản lý giỏ hàng và đơn hàng
+    - Tài khoản người dùng với các tính năng:
+      + Thông tin cá nhân
+      + Sổ địa chỉ
+      + Đổi mật khẩu
+
+    Các đường dẫn quan trọng:
+    - Để vào trang quản lý đơn hàng xin vui lòng click vào đây <a href="/order-history" target="_blank" rel="noopener noreferrer">Đơn hàng đã đặt</a>
+    - Để vào giỏ hàng vui lòng click vào đây <a href="/cart" target="_blank" rel="noopener noreferrer">Giỏ hàng của bạn</a>
+    - Để xem danh sách sản phẩm apple click vào đây: <a href="/q?b=apple" target="_blank" rel="noopener noreferrer">Xem danh sách sản phẩm apple</a>
+    - Để vào trang chủ click vào đây: <a href="/" target="_blank" rel="noopener noreferrer">Trang chủ</a>
+    - Để vào tài khoản click vào đây: <a href="/account" target="_blank" rel="noopener noreferrer">Tài khoản của bạn</a>
   `;
 
   // Hàm xử lý đầu vào của người dùng
@@ -33,50 +61,6 @@ const Chat = () => {
     setUserInput(e.target.value);
   };
 
-  // Hàm tra cứu đơn hàng
-  const searchOrder = async (searchText) => {
-    try {
-      const response = await fetch(`/api/orders?search=${searchText}`);
-      const data = await response.json();
-      if (data.success) {
-        return `Thông tin đơn hàng:\n${data.data
-          .map(
-            (order) => `
-          Mã đơn: ${order.numericId}
-          Trạng thái: ${order.status}
-          Tổng tiền: ${order.total.toLocaleString("vi-VN")}đ
-          Ngày đặt: ${new Date(order.createdAt).toLocaleDateString("vi-VN")}
-        `
-          )
-          .join("\n")}`;
-      }
-      return "Không tìm thấy đơn hàng nào";
-    } catch (error) {
-      return "Có lỗi xảy ra khi tra cứu đơn hàng";
-    }
-  };
-
-  // Hàm tìm kiếm sản phẩm
-  const searchProduct = async (searchText) => {
-    try {
-      const response = await fetch(`/api/products?search=${searchText}`);
-      const data = await response.json();
-      if (data.success) {
-        return `Kết quả tìm kiếm sản phẩm:\n${data.data
-          .map(
-            (product) => `
-          Tên: ${product.name}
-          Giá: ${product.price.toLocaleString("vi-VN")}đ
-          Danh mục: ${product.category?.name || "Chưa phân loại"}
-        `
-          )
-          .join("\n")}`;
-      }
-      return "Không tìm thấy sản phẩm nào";
-    } catch (error) {
-      return "Có lỗi xảy ra khi tìm kiếm sản phẩm";
-    }
-  };
 
   // Hàm gửi tin nhắn của người dùng đến Gemini
   const sendMessage = async () => {
@@ -85,28 +69,11 @@ const Chat = () => {
     setIsLoading(true);
     try {
       let response = "";
-
-      // Kiểm tra nếu là câu hỏi về đơn hàng
-      if (
-        userInput.toLowerCase().includes("đơn hàng") ||
-        userInput.toLowerCase().includes("tra cứu")
-      ) {
-        response = await searchOrder(userInput);
-      }
-      // Kiểm tra nếu là câu hỏi về sản phẩm
-      else if (
-        userInput.toLowerCase().includes("sản phẩm") ||
-        userInput.toLowerCase().includes("tìm kiếm")
-      ) {
-        response = await searchProduct(userInput);
-      }
-      // Nếu không phải các trường hợp trên, gửi đến Gemini
-      else {
         const prompt = `${websiteInfo}\n\nCâu hỏi của người dùng: ${userInput}`;
         const result = await model.generateContent(prompt);
         const geminiResponse = await result.response;
         response = geminiResponse.text();
-      }
+      
 
       // Thêm phản hồi vào lịch sử trò chuyện
       setChatHistory([
