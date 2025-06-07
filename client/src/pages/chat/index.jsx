@@ -39,12 +39,16 @@ const Chat = () => {
       const response = await fetch(`/api/orders?search=${searchText}`);
       const data = await response.json();
       if (data.success) {
-        return `Thông tin đơn hàng:\n${data.data.map(order => `
+        return `Thông tin đơn hàng:\n${data.data
+          .map(
+            (order) => `
           Mã đơn: ${order.numericId}
           Trạng thái: ${order.status}
-          Tổng tiền: ${order.total.toLocaleString('vi-VN')}đ
-          Ngày đặt: ${new Date(order.createdAt).toLocaleDateString('vi-VN')}
-        `).join('\n')}`;
+          Tổng tiền: ${order.total.toLocaleString("vi-VN")}đ
+          Ngày đặt: ${new Date(order.createdAt).toLocaleDateString("vi-VN")}
+        `
+          )
+          .join("\n")}`;
       }
       return "Không tìm thấy đơn hàng nào";
     } catch (error) {
@@ -58,11 +62,15 @@ const Chat = () => {
       const response = await fetch(`/api/products?search=${searchText}`);
       const data = await response.json();
       if (data.success) {
-        return `Kết quả tìm kiếm sản phẩm:\n${data.data.map(product => `
+        return `Kết quả tìm kiếm sản phẩm:\n${data.data
+          .map(
+            (product) => `
           Tên: ${product.name}
-          Giá: ${product.price.toLocaleString('vi-VN')}đ
-          Danh mục: ${product.category?.name || 'Chưa phân loại'}
-        `).join('\n')}`;
+          Giá: ${product.price.toLocaleString("vi-VN")}đ
+          Danh mục: ${product.category?.name || "Chưa phân loại"}
+        `
+          )
+          .join("\n")}`;
       }
       return "Không tìm thấy sản phẩm nào";
     } catch (error) {
@@ -77,13 +85,19 @@ const Chat = () => {
     setIsLoading(true);
     try {
       let response = "";
-      
+
       // Kiểm tra nếu là câu hỏi về đơn hàng
-      if (userInput.toLowerCase().includes("đơn hàng") || userInput.toLowerCase().includes("tra cứu")) {
+      if (
+        userInput.toLowerCase().includes("đơn hàng") ||
+        userInput.toLowerCase().includes("tra cứu")
+      ) {
         response = await searchOrder(userInput);
       }
       // Kiểm tra nếu là câu hỏi về sản phẩm
-      else if (userInput.toLowerCase().includes("sản phẩm") || userInput.toLowerCase().includes("tìm kiếm")) {
+      else if (
+        userInput.toLowerCase().includes("sản phẩm") ||
+        userInput.toLowerCase().includes("tìm kiếm")
+      ) {
         response = await searchProduct(userInput);
       }
       // Nếu không phải các trường hợp trên, gửi đến Gemini
@@ -93,7 +107,7 @@ const Chat = () => {
         const geminiResponse = await result.response;
         response = geminiResponse.text();
       }
-      
+
       // Thêm phản hồi vào lịch sử trò chuyện
       setChatHistory([
         ...chatHistory,
@@ -105,7 +119,10 @@ const Chat = () => {
       setChatHistory([
         ...chatHistory,
         { type: "user", message: userInput },
-        { type: "bot", message: "Xin lỗi, có lỗi xảy ra. Vui lòng thử lại sau." },
+        {
+          type: "bot",
+          message: "Xin lỗi, có lỗi xảy ra. Vui lòng thử lại sau.",
+        },
       ]);
     } finally {
       setUserInput("");
@@ -120,12 +137,14 @@ const Chat = () => {
 
   return (
     <div className="container">
-      <h1>Chatbot</h1>
+      <h5>Chăm sóc khách hàng </h5>
 
-      <div className="chat-container">
-        <ChatHistory chatHistory={chatHistory} />
-        <Loading isLoading={isLoading} />
-      </div>
+      {chatHistory?.length > 0 && (
+        <div className="chat-container">
+          <ChatHistory chatHistory={chatHistory} />
+          <Loading isLoading={isLoading} />
+        </div>
+      )}
 
       <div className="input-container">
         <input
@@ -134,6 +153,11 @@ const Chat = () => {
           placeholder="Nhập tin nhắn của bạn..."
           value={userInput}
           onChange={handleUserInput}
+          onKeyPress={(e) => {
+            if (e.key === 'Enter' && !isLoading) {
+              sendMessage();
+            }
+          }}
         />
         <button
           className="send-button"
@@ -143,11 +167,8 @@ const Chat = () => {
           Gửi
         </button>
       </div>
-      <button
-        className="clear-button"
-        onClick={clearChat}
-      >
-       Xóa chat
+      <button className="clear-button" onClick={clearChat}>
+        Xóa chat
       </button>
     </div>
   );

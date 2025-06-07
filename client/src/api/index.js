@@ -47,6 +47,7 @@ export const apiInstance = API;
 // ----------------------------Auth------------------------------------
 
 // if user exist then login otherwise signup
+export const createMomoPayment = () => API.post('/payment/momo/callback');
 export const googleOAuth = (googleCredential) => API.post('/auth/google', { googleCredential });
 
 export const register = (data) => API.post('/auth/register', data);

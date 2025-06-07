@@ -8,7 +8,6 @@ import Page from '../../components/Page';
 import Scrollbar from '../../components/Scrollbar';
 import { OrderDetailForm, OrderListHead, OrderListToolbar, OrderTableRow } from '../../components/dashboard/order';
 import { MTablePagination } from '../../components/@material-extend';
-import { PhoneVerifyDialog } from '../../components/authentication/phone-verify';
 import { stableSort, getComparator } from '../../helper/listHelper';
 //
 import * as api from '../../api';
@@ -256,13 +255,6 @@ export default function OrderHistoryPage() {
   return (
     <Page title={t('order.page-title')} id="move_top">
       <Container maxWidth="lg" sx={{ my: 5 }}>
-        <PhoneVerifyDialog
-          open={isOpenVerify}
-          onClose={() => {
-            setOpenVerify(false);
-          }}
-          onSuccess={handleVerifySuccess}
-        />
 
         <OrderDetailForm
           order={selectedOrder}

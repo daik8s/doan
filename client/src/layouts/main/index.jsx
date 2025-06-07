@@ -80,7 +80,7 @@ export default function MainLayout() {
       <MainNavbar categoryList={navBarItems} showCategoryMenu={!isCartPage} cartItemsCount={itemsCount} />
       <MainStyle>
         <Outlet />
-        <MainFooter />
+        {pathname !== '/chat' && <MainFooter />}
       </MainStyle>
     </RootStyle>
   );
