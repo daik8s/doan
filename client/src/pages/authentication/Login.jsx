@@ -52,15 +52,6 @@ export default function Login() {
         </Link>
       </AuthLayout>
 
-      <MHidden width="mdDown">
-        <SectionStyle>
-          <Typography variant="h3" sx={{ px: 5, mt: 10, mb: 5 }}>
-            {t('auth.salutation')}
-          </Typography>
-          <img src="/static/illustrations/illustration_login.png" alt="login" />
-        </SectionStyle>
-      </MHidden>
-
       <Container maxWidth="sm">
         <ContentStyle>
           <Box sx={{ mb: 5 }}>
@@ -69,8 +60,6 @@ export default function Login() {
             </Typography>
             <Typography sx={{ color: 'text.secondary' }}>{t('auth.sign-in-description')}</Typography>
           </Box>
-
-          <AuthWithSocial isLogin />
 
           <LoginForm />
 

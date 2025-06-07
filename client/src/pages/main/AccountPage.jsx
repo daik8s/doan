@@ -19,8 +19,7 @@ import {
   AccountGeneral,
   AccountBilling,
   AccountAddressBook,
-  AccountChangePassword,
-  AccountNotifications
+  AccountChangePassword,  
 } from '../../components/account';
 
 // ----------------------------------------------------------------------
@@ -79,12 +78,6 @@ export default function AccountPage() {
       icon: <Icon icon={roundVpnKey} width={20} height={20} />,
       component: <AccountChangePassword />
     },
-    {
-      label: t('account.config'),
-      value: 'config',
-      icon: <Icon icon={baselineSettings} width={20} height={20} />,
-      component: <AccountNotifications />
-    }
   ];
 
   const handleChangeTab = (event, newValue) => {

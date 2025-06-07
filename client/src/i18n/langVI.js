@@ -35,7 +35,7 @@ export default {
   home: {
     'page-title': 'Điện thoại di dộng chính hãng và phụ kiện | HK Mobile',
     cart: 'Giỏ hàng',
-    'order-history': 'Lịch sử mua hàng',
+    'order-history': 'Đơn đã đặt',
     'product-desc': 'Mô tả sản phẩm',
     'product-spec': 'Thông số kỹ thuật',
     review: 'Đánh giá',

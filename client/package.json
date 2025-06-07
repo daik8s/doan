@@ -65,6 +65,7 @@
     "@fullcalendar/react": "^5.7.0",
     "@fullcalendar/timegrid": "^5.7.0",
     "@fullcalendar/timeline": "^5.7.0",
+    "@google/generative-ai": "^0.24.1",
     "@iconify/icons-eva": "^1.1.0",
     "@iconify/icons-fluent": "^1.1.31",
     "@iconify/icons-ic": "^1.1.4",
@@ -115,7 +116,7 @@
     "react-image-lightbox": "^5.1.1",
     "react-infinite-scroll-component": "^6.1.0",
     "react-intersection-observer": "^8.32.0",
-    "react-markdown": "^6.0.2",
+    "react-markdown": "^6.0.3",
     "react-phone-input-2": "^2.15.0",
     "react-quill": "^2.0.0-beta.2",
     "react-redux": "^7.2.4",
@@ -150,7 +151,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.23.2",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "tailwindcss": "^4.1.7"
   },
   "overrides": {
     "@react-pdf/font": "2.2.1",

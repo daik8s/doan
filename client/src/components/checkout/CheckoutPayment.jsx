@@ -62,34 +62,6 @@ export default function CheckoutPayment() {
       description: t('cart.payment-method-vnpay-desc'),
       icons: ['/static/icons/ic_vnpay.svg']
     },
-    {
-      value: 'paypal',
-      title: t('cart.payment-method-paypal'),
-      description: t('cart.payment-method-paypal-desc'),
-      icons: ['/static/icons/ic_paypal.svg'],
-      isDevelop: true
-    },
-    {
-      value: 'momo',
-      title: t('cart.payment-method-momo'),
-      description: t('cart.payment-method-momo-desc'),
-      icons: ['/static/icons/ic_momo.svg'],
-      isDevelop: true
-    },
-    {
-      value: 'zalopay',
-      title: t('cart.payment-method-zalopay'),
-      description: t('cart.payment-method-zalopay-desc'),
-      icons: ['/static/icons/ic_zalopay.svg'],
-      isDevelop: true
-    },
-    {
-      value: 'credit_card',
-      title: 'Credit / Debit Card',
-      description: 'We support Mastercard, Visa, Discover and Stripe.',
-      icons: ['/static/icons/ic_mastercard.svg', '/static/icons/ic_visa.svg'],
-      isDevelop: true
-    }
   ];
 
   if (orderInfo.isReceiveAtStore) {

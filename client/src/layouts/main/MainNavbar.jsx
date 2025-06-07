@@ -167,15 +167,6 @@ function MainNavbar({ categoryList, showCategoryMenu, cartItemsCount }) {
         })}
       >
         <ContainerStyle maxWidth="lg" style={{ height: 64 }}>
-          <RouterLink to="/">
-            <MHidden width="mdUp">
-              <Logo />
-            </MHidden>
-            <MHidden width="mdDown">
-              <LogoFull />
-            </MHidden>
-          </RouterLink>
-
           <Box sx={{ mx: 3, flexGrow: 1 }}>
             <SearchBar />
           </Box>
@@ -184,8 +175,6 @@ function MainNavbar({ categoryList, showCategoryMenu, cartItemsCount }) {
             <MHidden width="mdUp">
               <MenuMobile isOffset={isOffset} isHome={false} navConfig={categoryList} />
             </MHidden>
-
-            <LanguagePopover isShowTitle />
 
             <NavbarItem text={t('home.order-history')} icon={history24Filled} color="inherit" href="/order-history" />
             <NavbarItem

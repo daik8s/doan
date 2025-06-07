@@ -77,18 +77,6 @@ export default function AccountGeneral() {
       .min(1, t("account.last-name-min"))
       .max(50, t("account.last-name-max")).nullable(),
     dob: Yup.date(),
-    email: Yup.string()
-      .required("Không được bỏ trống")
-      .matches(
-        /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/,
-        t("account.email-invalid")
-      ).nullable(),
-    phone: Yup.string()
-      .required(t("address.phone-required"))
-      .matches(
-        /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
-        t("address.phone-invalid")
-      ).nullable(),
     avatar: Yup.string(),
   });
 
@@ -205,49 +193,6 @@ export default function AccountGeneral() {
       </Grid>
 
       <Grid item xs={12} md={8}>
-        <Card sx={{ p: 3, mb: 3 }}>
-          <Stack spacing={{ xs: 2, md: 3 }}>
-            <Typography variant="overline" sx={{ color: "text.secondary" }}>
-              {t("account.email-and-phone")}
-            </Typography>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
-              <TextField
-                fullWidth
-                label={t("auth.email")}
-                {...getFieldProps("email")}
-                error={Boolean(errors.email)}
-                helperText={errors.email}
-                sx={{ mr: 2 }}
-              />
-              <Button
-                type="button"
-                size="small"
-                variant="outlined"
-                sx={{ my: 1, minWidth: 120 }}
-              >
-                {t("common.edit")}
-              </Button>
-            </Box>
-            <Box sx={{ display: "flex", flexDirection: "row" }}>
-              <TextField
-                fullWidth
-                label={t("auth.phone")}
-                {...getFieldProps("phone")}
-                error={Boolean(errors.phone)}
-                helperText={errors.phone}
-                sx={{ mr: 2 }}
-              />
-              <Button
-                type="button"
-                size="small"
-                variant="outlined"
-                sx={{ my: 1, minWidth: 120 }}
-              >
-                {t("common.edit")}
-              </Button>
-            </Box>
-          </Stack>
-        </Card>
         <Card sx={{ p: 3 }}>
           <Stack>
             <Typography variant="overline" sx={{ color: "text.secondary" }}>

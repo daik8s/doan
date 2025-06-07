@@ -69,7 +69,7 @@ export default function MainFooter() {
         >
           <Grid item xs={12} sx={{ mb: 3 }}>
             <ScrollLink to="move_top" spy smooth>
-              <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
+             2019604838
             </ScrollLink>
           </Grid>
           <Grid item xs={8} md={3}>
@@ -132,7 +132,7 @@ export default function MainFooter() {
             textAlign: { xs: 'center', md: 'left' }
           }}
         >
-          &copy; 2021 HK Mobile. All rights reserved
+          &copy; 2025 All rights reserved
         </Typography>
       </Container>
     </RootStyle>

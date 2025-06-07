@@ -4,7 +4,6 @@ import { Link as RouterLink } from 'react-router-dom';
 import { experimentalStyled as styled } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
 // components
-import Logo from '../components/Logo';
 //
 import { MHidden } from '../components/@material-extend';
 
@@ -36,7 +35,7 @@ export default function AuthLayout({ children }) {
   return (
     <HeaderStyle>
       <RouterLink to="/">
-        <Logo />
+        Đăng ký/ Đăng nhập
       </RouterLink>
 
       <MHidden width="smDown">
