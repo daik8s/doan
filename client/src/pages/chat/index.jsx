@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import * as api from "../../api";
 
 // Style components using Tailwind CSS
 import "./App.css";
 import ChatHistory from "./ChatHistory";
 import Loading from "./Loading";
+import { useLocales } from "src/hooks";
+import { fDateTime } from "src/utils/formatTime";
+import { fCurrency } from "src/utils/formatNumber";
 
 const Chat = () => {
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [orderList, setOrderList] = useState([]);
 
   // Khởi tạo Gemini API
   const genAI = new GoogleGenerativeAI(
@@ -54,6 +59,17 @@ const Chat = () => {
     - Để xem danh sách sản phẩm apple click vào đây: <a href="/q?b=apple" target="_blank" rel="noopener noreferrer">Xem danh sách sản phẩm apple</a>
     - Để vào trang chủ click vào đây: <a href="/" target="_blank" rel="noopener noreferrer">Trang chủ</a>
     - Để vào tài khoản click vào đây: <a href="/account" target="_blank" rel="noopener noreferrer">Tài khoản của bạn</a>
+
+    Thông tin về đơn hàng:
+    - Để xem đơn hàng đã đặt, bạn có thể:
+      1. Click vào link "Đơn hàng đã đặt" ở trên
+      2. Hoặc truy cập trực tiếp đường dẫn /order-history
+    - Tại trang đơn hàng, bạn có thể:
+      + Xem danh sách tất cả đơn hàng đã đặt
+      + Tìm kiếm đơn hàng theo mã đơn
+      + Lọc đơn hàng theo trạng thái
+      + Xem chi tiết từng đơn hàng
+      + Thực hiện các thao tác như đặt lại đơn hàng hoặc hủy đơn
   `;
 
   // Hàm xử lý đầu vào của người dùng
@@ -61,7 +77,30 @@ const Chat = () => {
     setUserInput(e.target.value);
   };
 
+  // Hàm lấy danh sách đơn hàng
+  const fetchOrders = async () => {
+    try {
+      const params = {
+        page: 1,
+        limit: 1000000000
+      };
+      const accessToken = JSON.parse(sessionStorage.getItem('otpVerification'))?.accessToken;
+      if (accessToken) {
+        params.accessToken = accessToken;
+      }
+      const { data } = await api.getListOrders(params);
+      setOrderList(data.data);
+      return data.data;
+    } catch (error) {
+      console.error("Lỗi khi lấy danh sách đơn hàng:", error);
+      return [];
+    }
+  };
+  const { t, currentLang } = useLocales();
 
+  useEffect(() => {
+    fetchOrders();
+  }, []);
   // Hàm gửi tin nhắn của người dùng đến Gemini
   const sendMessage = async () => {
     if (userInput.trim() === "") return;
@@ -69,11 +108,26 @@ const Chat = () => {
     setIsLoading(true);
     try {
       let response = "";
+
+      // Kiểm tra nếu người dùng yêu cầu xem đơn hàng
+      if (userInput.toLowerCase().includes("xem đơn hàng") ||
+        userInput.toLowerCase().includes("đơn hàng đã đặt")) {
+        if (orderList.length > 0) {
+          response = `Đây là danh sách đơn hàng của bạn:\n\n${orderList.map(order =>
+            `- Mã đơn: ${order._id}\n \n 
+            - Trạng thái: ${t(`order.status-${order?.status}`)}\n  
+            - Tổng tiền: ${fCurrency(order.total, currentLang.value)}\n
+            - Ngày đặt: ${fDateTime(order?.createdAt, currentLang.value)}\n`
+          ).join('\n')}\n\nBạn có thể click vào link "Đơn hàng đã đặt" ở trên để xem chi tiết.`;
+        } else {
+          response = "Bạn chưa có đơn hàng nào. Bạn có thể click vào link 'Đơn hàng đã đặt' ở trên để xem chi tiết.";
+        }
+      } else {
         const prompt = `${websiteInfo}\n\nCâu hỏi của người dùng: ${userInput}`;
         const result = await model.generateContent(prompt);
         const geminiResponse = await result.response;
         response = geminiResponse.text();
-      
+      }
 
       // Thêm phản hồi vào lịch sử trò chuyện
       setChatHistory([

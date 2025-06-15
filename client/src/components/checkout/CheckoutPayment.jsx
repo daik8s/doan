@@ -78,6 +78,12 @@ export default function CheckoutPayment() {
       description: t("cart.payment-method-momo-desc"),
       icons: ["/static/icons/ic_momo.svg"],
     },
+    {
+      value: 'zalopay',
+      title: t('cart.payment-method-zalopay'),
+      description: t('cart.payment-method-zalopay-desc'),
+      icons: ['/static/icons/ic_zalopay.svg'],
+    },
   ];
 
   if (orderInfo.isReceiveAtStore) {
@@ -110,7 +116,7 @@ export default function CheckoutPayment() {
 
   const handleMomoPayment = async () => {
     const data = await createMomoPayment()
-    if(data?.data?.payUrl) {
+    if (data?.data?.payUrl) {
       window.open(data?.data?.payUrl, "_self")
     }
   }
@@ -123,9 +129,9 @@ export default function CheckoutPayment() {
     onSubmit: async (values, { setErrors, setSubmitting }) => {
       console.log("values", values)
       try {
-        if(values?.paymentMethod === "momo") {
-         await handleMomoPayment()
-         return
+        if (values?.paymentMethod === "momo") {
+          await handleMomoPayment()
+          return
         }
         await handlePayment(values);
       } catch (error) {

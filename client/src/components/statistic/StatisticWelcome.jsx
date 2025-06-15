@@ -36,7 +36,7 @@ export default function StatisticWelcome() {
       >
         <Typography gutterBottom variant="h4">
           {t('dashboard.statistics.title')}
-          <br /> HK - Mobile
+          <br /> Xin chào!
         </Typography>
 
         <Typography variant="body2" sx={{ pb: { xs: 3, xl: 5 }, maxWidth: 480, mx: 'auto' }}>
