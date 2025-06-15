@@ -30,7 +30,7 @@ function CarouselItem({ item, isActive }) {
 
   return (
     <Paper sx={{ position: 'relative', paddingTop: { xs: '50vh', md: '60vh' } }}>
-      <CarouselImgStyle alt={name} src={image || 'https://source.unsplash.com/random/800x600'} />
+      <CarouselImgStyle alt={name} src={"https://cdn.thuvienphapluat.vn/uploads/khoinghiep/uploads/image/2024/10/24/045223963.png" || 'https://source.unsplash.com/random/800x600'} />
       <Box
         sx={{
           top: 0,

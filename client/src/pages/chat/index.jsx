@@ -1,15 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import * as api from "../../api";
 
 // Style components using Tailwind CSS
 import "./App.css";
 import ChatHistory from "./ChatHistory";
 import Loading from "./Loading";
+import { useLocales } from "src/hooks";
+import { fDateTime } from "src/utils/formatTime";
+import { fCurrency } from "src/utils/formatNumber";
 
 const Chat = () => {
   const [userInput, setUserInput] = useState("");
   const [chatHistory, setChatHistory] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [orderList, setOrderList] = useState([]);
 
   // Khởi tạo Gemini API
   const genAI = new GoogleGenerativeAI(
@@ -61,7 +66,31 @@ const Chat = () => {
     setUserInput(e.target.value);
   };
 
+  // Hàm lấy danh sách đơn hàng
+  const fetchOrders = async () => {
+    try {
+      const params = {
+        page: 1,
+        limit: 1000000000
+      };
+      const accessToken = JSON.parse(sessionStorage.getItem('otpVerification'))?.accessToken;
+      if (accessToken) {
+        params.accessToken = accessToken;
+      }
+      const { data } = await api.getListOrders(params);
+      setOrderList(data.data);
+      return data.data;
+    } catch (error) {
+      console.error("Lỗi khi lấy danh sách đơn hàng:", error);
+      return [];
+    }
+  };
+  
+  const { t, currentLang } = useLocales();
 
+  useEffect(() => {
+    fetchOrders();
+  }, []);
   // Hàm gửi tin nhắn của người dùng đến Gemini
   const sendMessage = async () => {
     if (userInput.trim() === "") return;
@@ -69,11 +98,26 @@ const Chat = () => {
     setIsLoading(true);
     try {
       let response = "";
+
+      // Kiểm tra nếu người dùng yêu cầu xem đơn hàng
+      if (userInput.toLowerCase().includes("xem đơn hàng") ||
+        userInput.toLowerCase().includes("đơn hàng đã đặt")) {
+        if (orderList.length > 0) {
+          response = `Đây là danh sách đơn hàng của bạn:\n\n${orderList.map(order =>
+            `- Mã đơn: ${order._id}\n \n 
+            - Trạng thái: ${t(`order.status-${order?.status}`)}\n  
+            - Tổng tiền: ${fCurrency(order.total, currentLang.value)}\n
+            - Ngày đặt: ${fDateTime(order?.createdAt, currentLang.value)}\n`
+          ).join('\n')}\n\nBạn có thể click vào link "Đơn hàng đã đặt" ở trên để xem chi tiết.`;
+        } else {
+          response = "Bạn chưa có đơn hàng nào. Bạn có thể click vào link 'Đơn hàng đã đặt' ở trên để xem chi tiết.";
+        }
+      } else {
         const prompt = `${websiteInfo}\n\nCâu hỏi của người dùng: ${userInput}`;
         const result = await model.generateContent(prompt);
         const geminiResponse = await result.response;
         response = geminiResponse.text();
-      
+      }
 
       // Thêm phản hồi vào lịch sử trò chuyện
       setChatHistory([
