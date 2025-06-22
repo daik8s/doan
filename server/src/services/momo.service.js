@@ -6,9 +6,9 @@ const getMomoResult = async (req, res) => {
   //parameters
   var accessKey = "F8BBA842ECF85";
   var secretKey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
-  var orderInfo = "pay with MoMo";
+  var orderInfo = "Thanh toán đơn hàng - Đại Nguyễn";
   var partnerCode = "MOMO";
-  var redirectUrl = "https://localhost:3000/api/v1/payment/momo/callback";
+  var redirectUrl = "https://localhost:3000/order-history";
   var ipnUrl = " https://c2f4-14-248-85-151.ngrok-free.app/api/v1/payment/callback";
   var requestType = "payWithMethod";
   var amount = "3000";

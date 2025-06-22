@@ -131,6 +131,7 @@ export default function CheckoutPayment() {
       try {
         if (values?.paymentMethod === "momo") {
           await handleMomoPayment()
+          await handlePayment(values);
           return
         }
         await handlePayment(values);

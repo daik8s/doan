@@ -17,7 +17,7 @@ const ChatHistory = ({ chatHistory }) => {
           )}
 
           <div className="message-content">
-            <ReactMarkdown>{message.message}</ReactMarkdown>
+            <div dangerouslySetInnerHTML={{ __html: message.message }} />
           </div>
         </div>
       ))}

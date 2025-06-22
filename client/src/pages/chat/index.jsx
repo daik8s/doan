@@ -24,11 +24,11 @@ const Chat = () => {
 
   // Thông tin về website
   const websiteInfo = `
-    Tên website: HK Mobile - Cửa hàng điện thoại và phụ kiện chính hãng
+    Tên website: Cửa hàng điện thoại và phụ kiện chính hãng
     Mô tả: Đây là một tính năng giúp bạn có thể tiếp cận ứng dụng tốt hơn
     
     Thông tin cửa hàng:
-    - Tên: HK Mobile
+    - Tên: Đại Nguyễn Mobile
     - Loại hình: Cửa hàng điện thoại và phụ kiện chính hãng
     - Mạng xã hội: 
       + Facebook: https://www.facebook.com/mobileshop
@@ -85,12 +85,18 @@ const Chat = () => {
       return [];
     }
   };
-  
+
+  const handleSearchProduct = async (keyword) => {
+    const { data } = await api.getSearchSuggest(keyword);
+    return data.data;
+  };
+
   const { t, currentLang } = useLocales();
 
   useEffect(() => {
     fetchOrders();
   }, []);
+
   // Hàm gửi tin nhắn của người dùng đến Gemini
   const sendMessage = async () => {
     if (userInput.trim() === "") return;
@@ -103,14 +109,49 @@ const Chat = () => {
       if (userInput.toLowerCase().includes("xem đơn hàng") ||
         userInput.toLowerCase().includes("đơn hàng đã đặt")) {
         if (orderList.length > 0) {
-          response = `Đây là danh sách đơn hàng của bạn:\n\n${orderList.map(order =>
-            `- Mã đơn: ${order._id}\n \n 
-            - Trạng thái: ${t(`order.status-${order?.status}`)}\n  
-            - Tổng tiền: ${fCurrency(order.total, currentLang.value)}\n
-            - Ngày đặt: ${fDateTime(order?.createdAt, currentLang.value)}\n`
-          ).join('\n')}\n\nBạn có thể click vào link "Đơn hàng đã đặt" ở trên để xem chi tiết.`;
+          response = `<div class="order-list">
+            <h3>Đây là danh sách đơn hàng của bạn:</h3>
+            ${orderList.map(order => `
+              <div class="order-item">
+                <p><strong>Mã đơn:</strong> ${order._id}</p>
+                <p><strong>Trạng thái:</strong> ${t(`order.status-${order?.status}`)}</p>
+                <p><strong>Tổng tiền:</strong> ${fCurrency(order.total, currentLang.value)}</p>
+                <p><strong>Ngày đặt:</strong> ${fDateTime(order?.createdAt, currentLang.value)}</p>
+                <hr />
+              </div>
+            `).join('')}
+            <p>Bạn có thể click vào link "Đơn hàng đã đặt" ở trên để xem chi tiết.</p>
+          </div>`;
         } else {
-          response = "Bạn chưa có đơn hàng nào. Bạn có thể click vào link 'Đơn hàng đã đặt' ở trên để xem chi tiết.";
+          response = `<div class="no-orders">
+            <p>Bạn chưa có đơn hàng nào. Bạn có thể click vào link 'Đơn hàng đã đặt' ở trên để xem chi tiết.</p>
+          </div>`;
+        }
+      } else if (userInput.toLowerCase().includes("tìm kiếm") || userInput.toLowerCase().includes("tìm")) {
+        const searchKeyword = userInput.replace(/tìm kiếm|tìm/gi, '').trim();
+        if (searchKeyword) {
+          const data = await handleSearchProduct(searchKeyword);
+
+          if (data && data?.length > 0) {
+            response = `<div class="search-results">
+              <h3>Kết quả tìm kiếm cho "${searchKeyword}":</h3>
+              ${data?.map(product => `
+                <div class="product-item">
+                  <h4>${product.name}</h4>
+                  <p><strong>Giá:</strong> ${fCurrency(product.variants[0].price, currentLang.value)}</p>
+                  <a href="/product/${product.slug}" class="view-details" target="_blank" rel="noopener noreferrer">Xem chi tiết</a>
+                </div>
+              `).join('')}
+            </div>`;
+          } else {
+            response = `<div class="no-results">
+              <p>Không tìm thấy sản phẩm nào phù hợp với "${searchKeyword}". Vui lòng thử tìm kiếm với từ khóa khác.</p>
+            </div>`;
+          }
+        } else {
+          response = `<div class="search-prompt">
+            <p>Vui lòng nhập từ khóa tìm kiếm.</p>
+          </div>`;
         }
       } else {
         const prompt = `${websiteInfo}\n\nCâu hỏi của người dùng: ${userInput}`;
@@ -132,7 +173,7 @@ const Chat = () => {
         { type: "user", message: userInput },
         {
           type: "bot",
-          message: "Xin lỗi, có lỗi xảy ra. Vui lòng thử lại sau.",
+          message: `<div class="error-message">Xin lỗi, có lỗi xảy ra. Vui lòng thử lại sau.</div>`
         },
       ]);
     } finally {
