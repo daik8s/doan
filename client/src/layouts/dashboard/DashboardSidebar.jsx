@@ -117,11 +117,6 @@ export default function DashboardSidebar({ isOpenSidebar, onCloseSidebar }) {
     <Scrollbar
       sx={{ height: '100%', '& .simplebar-content': { height: '100%', display: 'flex', flexDirection: 'column' } }}
     >
-      <Box sx={{ px: 2.5, py: 3 }}>
-        <Box component={RouterLink} to="/" sx={{ display: 'inline-flex', justifyContent: 'center', width: '100%' }}>
-          <LogoFull />
-        </Box>
-      </Box>
 
       <Box sx={{ mb: 2, mx: 2.5 }}>
         <Link underline="none" component={RouterLink} to="#">

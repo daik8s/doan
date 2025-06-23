@@ -164,8 +164,8 @@ async function createWithTransaction(orderData, createdBy) {
     orderToSave.discount = discount;
     orderToSave.total = subTotal + shippingFee - discount;
 
-    orderToSave.status = constants.ORDER.STATUS.PENDING;
-    orderToSave.paymentStatus = constants.ORDER.PAYMENT_STATUS.PENDING;
+    orderToSave.status = constants.ORDER.STATUS.COMPLETED;
+    orderToSave.paymentStatus = constants.ORDER.PAYMENT_STATUS.PAID;
 
     if (orderToSave.isReceiveAtStore) {
       orderToSave.address = null;
