@@ -8,8 +8,8 @@ const getMomoResult = async (req, res) => {
   var secretKey = "K951B6PE1waDMi640xX08PD3vg6EkVlz";
   var orderInfo = "Thanh toán đơn hàng - Đại Nguyễn";
   var partnerCode = "MOMO";
-  var redirectUrl = "https://localhost:3000/order-history";
-  var ipnUrl = " https://c2f4-14-248-85-151.ngrok-free.app/api/v1/payment/callback";
+  var redirectUrl = "http://localhost:3000/order-history";
+  var ipnUrl = redirectUrl
   var requestType = "payWithMethod";
   var amount = "3000";
   var orderId = partnerCode + new Date().getTime();
